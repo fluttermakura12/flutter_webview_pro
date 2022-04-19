@@ -552,7 +552,8 @@ public class FlutterWebView implements PlatformView, MethodCallHandler{
     if (WebViewFlutterPlugin.activity==null||!FileUtil.checkSDcard(WebViewFlutterPlugin.activity)) {
       return;
     }
-    String[] selectPicTypeStr = {WebViewFlutterPlugin.activity.getString(R.string.take_photo),
+    String[] selectPicTypeStr = {
+//            WebViewFlutterPlugin.activity.getString(R.string.take_photo),
             WebViewFlutterPlugin.activity.getString(R.string.photo_library)};
     new AlertDialog.Builder(WebViewFlutterPlugin.activity)
             .setOnCancelListener(new ReOnCancelListener())
@@ -563,7 +564,7 @@ public class FlutterWebView implements PlatformView, MethodCallHandler{
                         switch (which) {
                           // 相机拍摄
                           case 0:
-                            openCamera();
+                            openImageChooserActivity();
                             break;
                           // 手机相册
                           case 1:
