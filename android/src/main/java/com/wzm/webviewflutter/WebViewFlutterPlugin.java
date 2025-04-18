@@ -7,9 +7,12 @@ import android.util.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
+import io.flutter.embedding.engine.plugins.activity.ActivityResultListener;
+import io.flutter.embedding.engine.plugins.activity.RequestPermissionsResultListener;
 import io.flutter.plugin.common.BinaryMessenger;
 
-public class WebViewFlutterPlugin implements FlutterPlugin, PluginRegistry.ActivityResultListener, PluginRegistry.RequestPermissionsResultListener, ActivityAware {
+public class WebViewFlutterPlugin implements FlutterPlugin, ActivityAware, ActivityResultListener, RequestPermissionsResultListener {
+
   private static final String TAG = "WebViewFlutterPlugin";
   private FlutterCookieManager flutterCookieManager;
   public static Activity activity;
